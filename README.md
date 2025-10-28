@@ -1,16 +1,68 @@
-# React + Vite
+💻 Code Explanation – Weather Now
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project consists mainly of three important files: App.jsx, weatherService.js, and style.css.
+Each of these files plays a key role in making the weather app function smoothly and look good.
 
-Currently, two official plugins are available:
+🧩 1. App.jsx
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This is the main React component of the application.
 
-## React Compiler
+It manages user input (city name), handles API requests, and displays weather data on the screen.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Uses React useState for managing data such as:
 
-## Expanding the ESLint configuration
+weatherData → stores current weather details.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+forecastData → stores upcoming days’ forecast.
+
+city → tracks user input.
+
+When the user clicks Get Weather, it triggers a function that fetches data from weatherService.js.
+
+It then updates the UI dynamically without reloading the page.
+
+Also contains the JSX structure — input field, button, and weather display cards.
+
+🌤️ 2. weatherService.js
+
+This file handles the API integration.
+
+It uses the Open-Meteo API to fetch weather information based on the city name.
+
+It performs two key actions:
+
+Converts the city name to latitude and longitude (using Open-Meteo’s geocoding service).
+
+Fetches temperature, wind speed, humidity, and forecast data for those coordinates.
+
+All the API logic is written separately here to keep App.jsx clean and modular.
+
+The functions inside return processed JSON data that App.jsx can easily use.
+
+🎨 3. style.css
+
+This file defines the visual design of the app.
+
+It includes styling for:
+
+The input field and search button
+
+Weather cards layout and animation
+
+Responsive design adjustments for different screen sizes
+
+The design is minimal, clean, and mobile-friendly.
+
+It ensures the app looks consistent and easy to read across devices.
+
+⚙️ Code Flow Summary
+
+User types a city name → clicks “Get Weather”.
+
+App.jsx calls a function from weatherService.js.
+
+The function fetches real-time weather data from Open-Meteo API.
+
+The returned data is displayed dynamically on the UI using React state updates.
+
+Styling from style.css ensures everything is neatly presented.
