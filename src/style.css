@@ -1,0 +1,92 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #6dd5fa, #2980b9);
+  color: #fff;
+  min-height: 100vh;
+}
+
+.container {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 40px 30px;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  max-width: 480px;
+  margin: 80px auto;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+input[type="text"] {
+  padding: 12px;
+  width: 70%;
+  border: none;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  outline: none;
+  font-size: 16px;
+  text-align: center;
+}
+
+button {
+  padding: 10px 20px;
+  margin: 8px;
+  border: none;
+  border-radius: 8px;
+  background-color: #3498db;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background-color: #1f78b4;
+  transform: scale(1.05);
+}
+
+.weather-info {
+  margin-top: 20px;
+  font-size: 18px;
+  line-height: 1.6;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 15px;
+  border-radius: 12px;
+}
+
+#forecast {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.forecast-card {
+  background: rgba(255, 255, 255, 0.8);
+  color: #000;
+  border-radius: 12px;
+  margin: 10px;
+  padding: 15px;
+  width: 130px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease-in-out;
+}
+
+.forecast-card:hover {
+  transform: scale(1.08);
+}
+
+.forecast-card h4 {
+  margin: 0 0 10px;
+  font-size: 15px;
+  color: #222;
+}
+
+.forecast-card p {
+  margin: 5px 0;
+  font-size: 14px;
+}
